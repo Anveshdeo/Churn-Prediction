@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+.login{
+top: 20%;
+}
+</style>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Churn Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+        <select name="Gender" required="required">
+		  <option value="">Select Gender </option>
+		  <option value="Male">Male</option>
+		  <option value="Female">Female</option>
+		</select>
+		<select name="SeniorCitizen" required="required">
+		  <option value="">Select SeniorCitizen </option>
+		  <option value="0">No</option>
+		  <option value="1">Yes</option>
+		</select>
+		<select name="Partner" required="required">
+		  <option value="">Select Partner </option>
+		  <option value="Yes">Yes</option>
+		  <option value="No">No</option>
+		</select>
+		<select name="Dependents" required="required">
+		  <option value="">Select Dependents </option>
+		  <option value="Yes">Yes</option>
+		  <option value="No">No</option>
+		</select>
+		<input type="number" name="tenure" placeholder="tenure" required="required" />
+		<select name="PhoneService" required="required">
+		  <option value="">Select PhoneService </option>
+		  <option value="Yes">Yes</option>
+		  <option value="No">No</option>
+		</select>
+		<select name="InternetService" required="required">
+		  <option value="">Select InternetService </option>
+		  <option value="DSL">DSL</option>
+		  <option value="Fiber optic">Fiber optic</option>
+          <option value="No">No</option>	
+		</select>
+		<select name="OnlineSecurity" required="required">
+		  <option value="">Select OnlineSecurity </option>
+		  <option value="Yes">Yes</option>
+		  <option value="No">No</option>
+		  <option value="No internet service">No internet service</option>
+		</select>
+		<select name="OnlineBackup" required="required">
+		  <option value="">Select OnlineBackup </option>
+		  <option value="Yes">Yes</option>
+		  <option value="No">No</option>
+		  <option value="No internet service">No internet service</option>
+		</select>
+		<select name="Contract" required="required">
+		  <option value="">Select Contract </option>
+		  <option value="Month-to-month">Month-to-month</option>
+		  <option value="One year Contract">One year Contract</option>
+		  <option value="Two year">Two year</option>
+		</select>
+		<select name="PaperlessBilling" required="required">
+		  <option value="">Select PaperlessBilling </option>
+		  <option value="Yes">Yes</option>
+		  <option value="No">No</option>
+		</select>
+		<select name="PaymentMethod" required="required">
+		  <option value="">Select PaymentMethod</option>
+		  <option value="Electronic check">Electronic check</option>
+		  <option value="Mailed check">Mailed check</option>
+		  <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+		  <option value="Credit card (automatic)">Credit card (automatic)</option>
+		</select>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
