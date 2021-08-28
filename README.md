@@ -19,4 +19,12 @@ Services that each customer has signed up for – phone, multiple lines, interne
 Customer account information – how long they’ve been a customer, contract, payment method, paperless billing, monthly charges, and total charges.
 Demographic info about customers – gender, age range, and if they have partners and dependents.
 
+**OUTPUT**
+**Enter the inputs to predict**
+![1](https://user-images.githubusercontent.com/79392789/131216004-8008e043-9e47-4ee3-aabd-b3f96f8be8d5.PNG)
 
+**Example: In which Customer is LIKELY to Churn**
+![Capture1 likely](https://user-images.githubusercontent.com/79392789/131216006-7de86d5b-18b8-4676-9ab3-744cb9ebb9fa.PNG)
+
+**Example: In which Customer is NOT LIKELY to Churn**
+![Capture3 not](https://user-images.githubusercontent.com/79392789/131216008-2fa13ea5-05a5-42f9-aa8c-45a7ad832185.PNG)
